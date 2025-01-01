@@ -205,7 +205,7 @@
                     </select>
                 </div>
                 <div class="p-4">
-                    <textarea id="sourceText" class="custom-input w-full h-[32rem] resize-none rounded-xl bg-transparent text-gray-700 placeholder-gray-400 p-4" placeholder="请输入要翻译的文本..."></textarea>
+                    <textarea id="sourceText" class="custom-input w-full h-[24rem] md:h-[32rem] resize-none rounded-xl bg-transparent text-gray-700 placeholder-gray-400 p-4" placeholder="请输入要翻译的文本..."></textarea>
                 </div>
             </div>
 
@@ -274,8 +274,11 @@
                         </optgroup>
                     </select>
                 </div>
-                <div class="p-4">
-                    <textarea id="targetText" class="custom-input w-full h-[32rem] resize-none rounded-xl bg-transparent text-gray-700 p-4" placeholder="翻译结果" readonly></textarea>
+                <div class="p-4 relative">
+                    <textarea id="targetText" class="custom-input w-full h-[24rem] md:h-[32rem] resize-none rounded-xl bg-transparent text-gray-700 p-4" placeholder="翻译结果" readonly></textarea>
+                    <button id="copyButton" class="absolute bottom-8 right-8 p-2 text-gray-400 hover:text-gray-600 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 z-10">
+                        <i class="fas fa-copy"></i>
+                    </button>
                 </div>
             </div>
         </div>
