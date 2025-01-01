@@ -26,6 +26,7 @@ function init() {
     loadStoredSettings();
     setupEventListeners();
     setupPasswordToggle();
+    setupCopyButton();
 }
 
 // 加载存储的设置
@@ -191,5 +192,30 @@ async function translate() {
     }
 }
 
+// 添加新的复制按钮设置函数
+function setupCopyButton() {
+    const copyButton = document.getElementById('copyButton');
+    if (!copyButton) {
+        console.error('Copy button not found');
+        return;
+    }
+
+    copyButton.addEventListener('click', async () => {
+        const textToCopy = elements.targetText.value;
+        if (!textToCopy) {
+            console.log('No text to copy');
+            return;
+        }
+
+        try {
+            await navigator.clipboard.writeText(textToCopy);
+            showToast('已复制到剪贴板');
+        } catch (err) {
+            console.error('Copy failed:', err);
+            showToast('复制失败，请手动复制', 'error');
+        }
+    });
+}
+
 // 初始化应用
-init(); 
+init();
